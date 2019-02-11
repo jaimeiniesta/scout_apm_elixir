@@ -24,6 +24,7 @@ if Code.ensure_loaded?(Telemetry) do
     end
 
     def handle_event([_app, _repo, :query], _value, metadata, _config) do
+      IO.inspect "HELLO THIS IS MITCHELL"
       ScoutApm.Instruments.EctoLogger.record(metadata)
     end
   end
